@@ -25,8 +25,8 @@
 17-->/Users/ldd/sun/app/src/main/AndroidManifest.xml:9:9-54
 18        android:supportsRtl="true"
 18-->/Users/ldd/sun/app/src/main/AndroidManifest.xml:10:9-35
-19        android:theme="@style/AppTheme" >
-19-->/Users/ldd/sun/app/src/main/AndroidManifest.xml:11:9-40
+19        android:theme="@style/Theme.Sunflower" >
+19-->/Users/ldd/sun/app/src/main/AndroidManifest.xml:11:9-47
 20        <activity android:name="com.eeparking.sun.GardenActivity" >
 20-->/Users/ldd/sun/app/src/main/AndroidManifest.xml:12:9-18:20
 20-->/Users/ldd/sun/app/src/main/AndroidManifest.xml:12:19-49
