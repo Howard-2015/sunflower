@@ -20,6 +20,9 @@ class PlantDetailFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val binding = FragmentPlantDetailBinding.inflate(inflater, container, false)
-        context ?: return binding.root
+        binding.apply {
+            
+        }
+        return binding.root
     }
 }

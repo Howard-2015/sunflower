@@ -41,6 +41,26 @@
 24-->/Users/ldd/sun/app/src/main/AndroidManifest.xml:16:27-74
 25            </intent-filter>
 26        </activity>
-27    </application>
-28
-29</manifest>
+27
+28        <service
+28-->[androidx.room:room-runtime:2.2.5] /Users/ldd/.gradle/caches/transforms-2/files-2.1/2d748680cf13dd7f220a248fe33b243e/room-runtime-2.2.5/AndroidManifest.xml:25:9-28:40
+29            android:name="androidx.room.MultiInstanceInvalidationService"
+29-->[androidx.room:room-runtime:2.2.5] /Users/ldd/.gradle/caches/transforms-2/files-2.1/2d748680cf13dd7f220a248fe33b243e/room-runtime-2.2.5/AndroidManifest.xml:26:13-74
+30            android:directBootAware="true"
+30-->[androidx.room:room-runtime:2.2.5] /Users/ldd/.gradle/caches/transforms-2/files-2.1/2d748680cf13dd7f220a248fe33b243e/room-runtime-2.2.5/AndroidManifest.xml:27:13-43
+31            android:exported="false" />
+31-->[androidx.room:room-runtime:2.2.5] /Users/ldd/.gradle/caches/transforms-2/files-2.1/2d748680cf13dd7f220a248fe33b243e/room-runtime-2.2.5/AndroidManifest.xml:28:13-37
+32
+33        <provider
+33-->[androidx.lifecycle:lifecycle-process:2.2.0] /Users/ldd/.gradle/caches/transforms-2/files-2.1/2361ea377168cc8246990125988fc654/jetified-lifecycle-process-2.2.0/AndroidManifest.xml:25:9-29:43
+34            android:name="androidx.lifecycle.ProcessLifecycleOwnerInitializer"
+34-->[androidx.lifecycle:lifecycle-process:2.2.0] /Users/ldd/.gradle/caches/transforms-2/files-2.1/2361ea377168cc8246990125988fc654/jetified-lifecycle-process-2.2.0/AndroidManifest.xml:26:13-79
+35            android:authorities="com.eeparking.sun.lifecycle-process"
+35-->[androidx.lifecycle:lifecycle-process:2.2.0] /Users/ldd/.gradle/caches/transforms-2/files-2.1/2361ea377168cc8246990125988fc654/jetified-lifecycle-process-2.2.0/AndroidManifest.xml:27:13-69
+36            android:exported="false"
+36-->[androidx.lifecycle:lifecycle-process:2.2.0] /Users/ldd/.gradle/caches/transforms-2/files-2.1/2361ea377168cc8246990125988fc654/jetified-lifecycle-process-2.2.0/AndroidManifest.xml:28:13-37
+37            android:multiprocess="true" />
+37-->[androidx.lifecycle:lifecycle-process:2.2.0] /Users/ldd/.gradle/caches/transforms-2/files-2.1/2361ea377168cc8246990125988fc654/jetified-lifecycle-process-2.2.0/AndroidManifest.xml:29:13-40
+38    </application>
+39
+40</manifest>
