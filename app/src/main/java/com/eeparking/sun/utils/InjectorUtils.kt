@@ -6,6 +6,7 @@ import com.eeparking.sun.data.AppDatabase
 import com.eeparking.sun.data.GardenPlantingRepository
 import com.eeparking.sun.data.PlantRepository
 import com.eeparking.sun.viewmodels.GardenPlantingListViewModelFactory
+import com.eeparking.sun.viewmodels.PlantDetailViewModelFactory
 import com.eeparking.sun.viewmodels.PlantListViewModelFactory
 
 /**
@@ -39,4 +40,14 @@ object InjectorUtils {
         )
     }
 
+    fun providePlantDetailViewModelFactory(
+        context: Context,
+        plantId: String
+    ): PlantDetailViewModelFactory {
+        return PlantDetailViewModelFactory(
+            getPlantRepository(context),
+            getGardenPlantingRepository(context),
+            plantId
+        )
+    }
 }
