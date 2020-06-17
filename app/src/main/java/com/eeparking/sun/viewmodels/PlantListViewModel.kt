@@ -7,7 +7,7 @@ import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import com.eeparking.sun.data.Plant
 import androidx.lifecycle.switchMap
-import com.eeparking.sun.data.repository.PlantRepository
+import com.eeparking.sun.data.PlantRepository
 
 /**
  * @author   linhaidong
@@ -19,6 +19,7 @@ class PlantListViewModel internal constructor(
     plantRepository: PlantRepository,
     private val savedStateHandle: SavedStateHandle
 ) : ViewModel() {
+
     val plants: LiveData<List<Plant>> = getSavedGrowZoneNumber().switchMap {
         if (it == NO_GROW_ZONE) {
             plantRepository.getPlants()

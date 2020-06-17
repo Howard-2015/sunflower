@@ -3,7 +3,9 @@ package com.eeparking.sun.utils
 import android.content.Context
 import androidx.fragment.app.Fragment
 import com.eeparking.sun.data.AppDatabase
-import com.eeparking.sun.data.repository.PlantRepository
+import com.eeparking.sun.data.GardenPlantingRepository
+import com.eeparking.sun.data.PlantRepository
+import com.eeparking.sun.viewmodels.GardenPlantingListViewModelFactory
 import com.eeparking.sun.viewmodels.PlantListViewModelFactory
 
 /**
@@ -12,12 +14,29 @@ import com.eeparking.sun.viewmodels.PlantListViewModelFactory
  * @email lin894542913@vip.qq.com
  * @detail :
  */
-object InjectorUtils{
-//    fun providePlantListViewModelFactory(fragment: Fragment):PlantListViewModelFactory{
-//        return PlantListViewModelFactory(getPlantRepository(fragment.requireContext()),fragment)
-//    }
-//
-//    private fun getPlantRepository(requireContext: Context): PlantRepository {
-//        return PlantRepository.getInstance(AppDatabase.getins)
-//    }
+object InjectorUtils {
+    fun providePlantListViewModelFactory(fragment: Fragment): PlantListViewModelFactory {
+        var repository = getPlantRepository(fragment.requireContext())
+        return PlantListViewModelFactory(repository, fragment)
+    }
+
+    private fun getPlantRepository(requireContext: Context): PlantRepository {
+        return PlantRepository.getInstance(
+            AppDatabase.getInstance(requireContext.applicationContext).plantDao()
+        )
+    }
+
+    fun provideGardenPlantingListViewModelFactory(
+        context: Context
+    ): GardenPlantingListViewModelFactory {
+        val repository = getGardenPlantingRepository(context)
+        return GardenPlantingListViewModelFactory(repository)
+    }
+
+    private fun getGardenPlantingRepository(context: Context): GardenPlantingRepository {
+        return GardenPlantingRepository.getInstance(
+            AppDatabase.getInstance(context).gardenPlantingDao()
+        )
+    }
+
 }

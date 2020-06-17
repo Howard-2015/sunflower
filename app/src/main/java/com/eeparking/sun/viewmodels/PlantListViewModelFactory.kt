@@ -5,8 +5,7 @@ import androidx.lifecycle.AbstractSavedStateViewModelFactory
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.savedstate.SavedStateRegistryOwner
-import com.eeparking.sun.data.repository.PlantRepository
-import java.security.acl.Owner
+import com.eeparking.sun.data.PlantRepository
 
 /**
  * @author   linhaidong

@@ -1,6 +1,5 @@
 package com.eeparking.sun
 
-import android.graphics.drawable.Drawable
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -10,7 +9,7 @@ import androidx.fragment.app.Fragment
 import com.eeparking.sun.adapter.MY_GARDEN_PAGE_INDEX
 import com.eeparking.sun.adapter.PLANT_LIST_PAGE_INDEX
 import com.eeparking.sun.adapter.SunflowerPagerAdapter
-import com.eeparking.sun.databinding.FragmentHomeViewPagerBinding
+import com.eeparking.sun.databinding.FragmentViewPagerBinding
 import com.google.android.material.tabs.TabLayoutMediator
 import java.lang.IndexOutOfBoundsException
 
@@ -26,7 +25,7 @@ class HomeViewPagerFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val binding = FragmentHomeViewPagerBinding.inflate(inflater, container, false)
+        val binding = FragmentViewPagerBinding.inflate(inflater, container, false)
         val tabLayout = binding.tabs
         val viewPager = binding.viewPager
         //设置viewpager-adapter

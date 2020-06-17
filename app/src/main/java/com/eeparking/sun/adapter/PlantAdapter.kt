@@ -3,9 +3,11 @@ package com.eeparking.sun.adapter
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.eeparking.sun.HomeViewPagerFragmentDirections
 import com.eeparking.sun.data.Plant
 import com.eeparking.sun.databinding.ListItemPlantBinding
 
@@ -30,19 +32,24 @@ class PlantAdapter() : ListAdapter<Plant, RecyclerView.ViewHolder>(PlantDiffCall
     /**
      * viewholder
      */
-     class PlantViewHolder(private val binding: ListItemPlantBinding) :
-        RecyclerView.ViewHolder(binding.root) {
+     class PlantViewHolder(
+        private val binding: ListItemPlantBinding
+    ) : RecyclerView.ViewHolder(binding.root) {
 
         init {
             binding.setClickListener {
                 binding.plant?.let { plant ->
-                    navigteToPlant(plant, it)
+                    navigateToPlant(plant, it)
                 }
             }
         }
 
-        private fun navigteToPlant(plant: Plant, it: View?) {
-            TODO("Not yet implemented")
+        private fun navigateToPlant(
+            plant: Plant,
+            view: View
+        ) {
+            val direction = HomeViewPagerFragmentDirections.actionViewPagerFragmentToPlantDetailFragment(plant.plantId)
+            view.findNavController().navigate(direction)
         }
 
         fun bind(item: Plant) {
@@ -53,19 +60,18 @@ class PlantAdapter() : ListAdapter<Plant, RecyclerView.ViewHolder>(PlantDiffCall
         }
 
     }
+}
+/**
+ * PlantDiffCallback
+ */
+private class PlantDiffCallback : DiffUtil.ItemCallback<Plant>() {
 
-    /**
-     * PlantDiffCallback
-     */
-    private class PlantDiffCallback : DiffUtil.ItemCallback<Plant>() {
-
-        override fun areItemsTheSame(oldItem: Plant, newItem: Plant): Boolean {
-            return oldItem.plantId == newItem.plantId
-        }
-
-        override fun areContentsTheSame(oldItem: Plant, newItem: Plant): Boolean {
-            return oldItem == newItem
-        }
-
+    override fun areItemsTheSame(oldItem: Plant, newItem: Plant): Boolean {
+        return oldItem.plantId == newItem.plantId
     }
+
+    override fun areContentsTheSame(oldItem: Plant, newItem: Plant): Boolean {
+        return oldItem == newItem
+    }
+
 }

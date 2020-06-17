@@ -1,8 +1,10 @@
 package com.eeparking.sun.data
 
+import androidx.annotation.NonNull
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import org.jetbrains.annotations.Nullable
 
 /**
  * @author   linhaidong
@@ -12,7 +14,7 @@ import androidx.room.PrimaryKey
  */
 @Entity(tableName = "plants")
 data class Plant(
-    @PrimaryKey @ColumnInfo(name="id")
+    @PrimaryKey @ColumnInfo(name="id")@NonNull
     val plantId:String,
     val name: String,
     val description: String,
